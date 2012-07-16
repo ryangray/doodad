@@ -1,0 +1,98 @@
+/* iPhone and iPad stuff
+    Some other support is in the HTML template header (viewport) and the 
+    PHP handler script uses a different HTML banner
+*/
+
+@media screen and (max-device-width: 480px)
+    {
+    body
+        {
+        -webkit-text-size-adjust:none;
+        }
+    
+    div.banner
+        {
+        clear:both!important;
+        display:block!important;
+        width:100%!important;
+        float:none!important;
+        margin:0!important;
+        padding:0!important;
+        }
+    }
+
+/* Keep images within the screen width. Note that although the iPhone 4 has a 
+    640x960 screen, it presents itself to CSS as a 320x480 screen for layout.
+    Handy at least in that you don't need separate rules for older and newer 
+    iPhones. I suspect that whan a retina display iPad omes, it will work 
+    similarly. This is probably becuse the 2x rez is in the same physical size.
+    Also, need to specify px size rather than % since the image could be in a 
+    container smaller than the screen width and it would mess that size up.
+*/
+
+@media screen and (max-device-width: 480px) and (orientation:landscape)
+    {
+    /*
+    img
+        {
+        max-width:442px;
+        height:auto;
+        }
+        */
+    img
+        {
+        max-width:100%;
+        height:auto;
+        }
+    div
+        {
+        max-width:480px;
+        }
+    div div, section section
+        {
+        margin-left: 0;
+        }
+    }
+@media screen and (device-width: 320px) and (orientation:portrait)
+    {
+    /*
+    img
+        {
+        max-width:282px;
+        height:auto;
+        }
+        */
+    img
+        {
+        max-width:100%;
+        height:auto;
+        }
+    div
+        {
+        max-width:320px;
+        }
+    div div, section section
+        {
+        margin-left: 0;
+        }
+    }
+
+/* Same for iPad */
+    
+@media screen and (max-device-width: 1024px) and (orientation:landscape)
+    {
+    img
+        {
+        max-width:986px;
+        height:auto;
+        }
+    }
+@media screen and (device-width: 768px) and (orientation:portrait)
+    {
+    img
+        {
+        max-width:730px;
+        height:auto;
+        }
+    }
+

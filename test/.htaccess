@@ -1,0 +1,4 @@
+DirectoryIndex index.php index.html index.md index.text 
+# Path for PHP script needs to be from web root
+Action markdown /doodad/doodad.php
+AddHandler markdown .text .md

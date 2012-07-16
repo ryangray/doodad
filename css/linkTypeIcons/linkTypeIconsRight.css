@@ -1,0 +1,39 @@
+/* Auto file icons for links to various file types */
+/* Using icons on right since on the right has problems in IE if link text has 
+   sup or sub when also using sup/sub line height correction CSS below
+*/
+
+@media screen {
+
+a[href $='.pdf']
+    { 
+    padding-right: 20px;
+    background: transparent url(img/pdf.png) no-repeat center right;
+    }
+/* Should do it CSS 3 style like the following, but even IE 9 doesn't like it: */
+/*
+a[href $='.pdf']:after
+    { 
+    content: url(/css/img/pdf.png);
+    padding-right: 5px;
+    }
+*/
+a[href $='.doc'], a[href $='.docx']
+    { 
+    padding-right: 20px;
+    background: transparent url(img/word.png) no-repeat center right;
+    }
+a[href $='.ppt'], a[href $='.pptx']
+    { 
+    padding-right: 20px;
+    background: transparent url(img/ppt.png) no-repeat center right;
+    }
+
+/* Show link titled with "external" followed by an external link icon */
+a[href^="http://"], a[href^="https://"], a[target~="_blank"]
+    {
+	padding-right:12px;
+	background: transparent url(img/ico_external.gif) no-repeat center right;
+    }
+
+}
