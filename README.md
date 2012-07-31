@@ -100,6 +100,32 @@ to render embedded math using LaTeX syntax.
     This is the template for the HTML page. It has a little PHP in it for the 
     dynamic parts, but is mostly the static HTML for the generated HTML page.
 
+- For use in user folders:
+
+    If you put this in a folder under a user's web folder (to access with say 
+    `http://localhost/~joe/doodad/test`, you will need to have configured 
+    Apache to be able to browse there.
+    
+    For Mac OS X, at least, you will need to create a file in `/etc/apache2/users` 
+    named `username.conf`, where `username` is the short username (e.g., "joe" 
+    in the example URL above). In that file, you should have at least:
+    
+        <Directory "/Users/joe/Sites/">
+            AllowOverride All
+            Order allow,deny
+            Allow from all
+        </Directory>
+
+    replacing "joe" with the appropriate username.
+    As I understand it, this file should have root:wheel ownership, so do:
+    
+        sudo chown root:wheel joe.conf
+        
+    As a note, it seems that upgrading from Mac OS X 10.7 to 10.8 removed these 
+    user files I had previously set up, which made my user sites not work. 
+    As usual, it also replaced my modified `httpd.conf` file and thus disabled 
+    PHP, but at least that is normal to have to uncomment when upgrading. 
+    
 ## URL Query Options
 
 `format=`
