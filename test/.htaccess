@@ -5,10 +5,10 @@
 # You can reorder, add or remove index types from this, but you need to include 
 # one for the Markdown file extension(s) you want to use for index files.
 DirectoryIndex index.php index.html index.md index.text 
-
+AcceptPathInfo  On
 # Path for PHP script needs to be from web root, so change this to where you 
 # installed the Doodad folder.
-Action markdown /doodad/doodad.php
+Action markdown /blog/doodad/doodad.php
 
 # Here, you define the Markdown file extensions you want to use.
 # It should include the extensions that you set up for index files.

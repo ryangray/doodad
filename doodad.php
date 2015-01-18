@@ -1,8 +1,8 @@
 <?php 
 
-// Doodad 1.0
-// Ryan Gray (u2mr2os2@me.com)
-// 16 July 2012
+// Doodad 1.1
+// Lyndon White (oxinabox@ucc.asn.au) 18 jan 2015
+// Ryan Gray (u2mr2os2@me.com)  16 July 2012
 //
 // A handler script for dynamically serving Markdown files.
 //
@@ -221,7 +221,7 @@ $cssURL = $scriptURL . '/css/main.css';
 $crumbOnHome = false;
 $enableMath = false;
 $mathjaxScript = 'https://d3eoax9i5htok0.cloudfront.net/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML'; // Use the MathJax site
-$mathjaxConfig = $scriptDir . '/html/mathjaxConfig.html'; // Filename of custom MathJax configuration.
+$mathjaxConfig = $scriptDir . '/mathjaxConfig.html'; // Filename of custom MathJax configuration.
 
 // Synonyms for ?format=source to get the raw Markdown text
 $textFormatAliases = array('md', 'markdown', 'text', 'txt', 'source');
@@ -247,8 +247,11 @@ require 'config.php';
 
 // ----
 
-$mdFile = realpath($_SERVER['PATH_TRANSLATED']);
+//$mdFile = realpath($_SERVER['PATH_TRANSLATED']);
+$mdFile = $docrootDir.$_SERVER['ORIG_PATH_INFO'];
+
 $format = getGetString('format','html');
+//require 'printData.php';
 
 if ($mdFile)
     {
