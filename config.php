@@ -13,23 +13,24 @@
 // Could also use PHP Markdown Extra or PHP Markdown Extra Math
 // Path relative to this config.php file or absolute file path
 
-require '../PhpMarkdownExtra/markdown.php';
+require '../php-markdown-extra-math/markdown.php';
+
 
 // The web path to the document tree root
-$homeWeb = $scriptURL . '/test';
+$homeWeb = $scriptURL . '/test/';
 
 // The file path for the root of your document tree being served by this handler
-$home = $docroot . $homeWeb; // $docroot is the Apache doument DocumentRoot
+$home = $docrootDir . $homeWeb; // $docroot is the Apache doument DocumentRoot
 
 // Main CSS file (URL relative to script folder or starting with / from web root)
 $cssURL = $scriptURL . '/css/main.css';
 
 // Math support
 
-$enableMath = false; // true or false
+$enableMath = true; // true or false
 // MathJax script for math support. Must use PHP Markdown Extra Math (https://github.com/drdrang/php-markdown-extra-math).
 $mathjaxScript = 'https://d3eoax9i5htok0.cloudfront.net/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML'; // Use the MathJax site
-$mathjaxConfig = $scriptDir . '/html/mathjaxConfig.html'; // Filename of custom MathJax configuration.
+$mathjaxConfig = $scriptDir . '/mathjaxConfig.html'; // Filename of custom MathJax configuration.
 
 // You could create separate templates for iPhone and iPad if you wanted
 
@@ -45,5 +46,7 @@ else
     {
     $templateHTML = './template.php';
     }
+
+//require 'test.php';
 
 ?>
